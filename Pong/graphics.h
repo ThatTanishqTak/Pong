@@ -14,6 +14,8 @@ public:
 
 	int playerScore, oppoScore;
 
+	int getScore(int playerScore, int oppoScore);
+
 private:
 	Texture2D background;
 
