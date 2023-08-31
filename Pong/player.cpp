@@ -11,7 +11,9 @@ void Player::update()
 	if (playerPos.y + playerSize.y >= 720.0f) { playerPos.y = 720.0f - playerSize.y; }
 }
 
-void Player::render() { DrawRectangle(static_cast<int>(playerPos.x), static_cast<int>(playerPos.y), static_cast<int>(playerSize.x), static_cast<int>(playerSize.y), WHITE); }
+void Player::render() { DrawRectangle(static_cast<int>(playerPos.x), static_cast<int>(playerPos.y), 
+									  static_cast<int>(playerSize.x), static_cast<int>(playerSize.y), WHITE); 
+					  }
 
 void Player::initVariables()
 {
