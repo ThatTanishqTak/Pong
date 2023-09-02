@@ -1,8 +1,6 @@
 #pragma once
 
 #include "raylib.h"
-#include <iostream>
-#include <sstream>
 
 class Graphics
 {

@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "player.h"
 #include "ball.h"
+#include "score.h"
 
 class Game
 {
@@ -17,6 +18,7 @@ private:
 	Graphics* grap_obj;
 	Player* play_obj;
 	Ball* ball_obj;
+	Score* score_obj;
 
 	void update();
 	void render();

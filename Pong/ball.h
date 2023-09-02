@@ -1,13 +1,11 @@
 #pragma once
 
 #include "raylib.h"
-#include "graphics.h"
 
 class Ball
 {
 public:
 	Ball();
-	~Ball();
 
 	void update();
 	void render();
@@ -17,8 +15,5 @@ public:
 	Vector2 ballPos;
 
 private:
-	Graphics* grap_ball_obj;
-
 	void initVariables();
-	void unload();
 };

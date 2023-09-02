@@ -1,13 +1,6 @@
 #include "ball.h"
 
-Ball::Ball()
-{
-	initVariables();
-
-	grap_ball_obj = new Graphics();
-}
-
-Ball::~Ball() { unload(); }
+Ball::Ball() { initVariables(); }
 
 void Ball::update()
 {
@@ -28,5 +21,3 @@ void Ball::initVariables()
 	ballPos = { 540.0f, 360.0f };
 	ballSpeed = { 450.0f, 450.0f };
 }
-
-void Ball::unload() { delete grap_ball_obj; }
