@@ -15,10 +15,8 @@ void Graphics::render()
 	DrawText((std::to_string(oppoScore)).c_str(), 785, 0, 50, YELLOW);
 }
 
-int Graphics::getScore(int playerScore, int oppoScore)
-{
-	return playerScore, oppoScore;
-}
+void Graphics::updatePlayerScore() { playerScore++; }
+void Graphics::updateOppoScore() { oppoScore++; }
 
 void Graphics::initTextures() { background = LoadTexture("Textures/background.png"); }
 

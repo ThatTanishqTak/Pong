@@ -2,9 +2,6 @@
 
 Game::Game()
 {
-	initVariables();
-	initScreen();
-
 	grap_obj = new Graphics();
 	play_obj = new Player();
 	ball_obj = new Ball();
@@ -19,18 +16,6 @@ void Game::run()
 		update();
 		render();
 	}
-}
-
-void Game::initVariables()
-{
-	windowWidth = 1080.0f;
-	windowHeight = 720.0f;
-}
-
-void Game::initScreen()
-{
-	InitWindow(static_cast<int>(windowWidth), static_cast<int>(windowHeight), "Pong");
-	SetTargetFPS(60);
 }
 
 void Game::update()

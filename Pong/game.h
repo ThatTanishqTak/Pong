@@ -18,11 +18,6 @@ private:
 	Player* play_obj;
 	Ball* ball_obj;
 
-	void initVariables();
-	void initScreen();
-
-	float windowWidth, windowHeight;
-
 	void update();
 	void render();
 
