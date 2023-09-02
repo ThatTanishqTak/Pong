@@ -10,8 +10,11 @@ public:
 	void update();
 	void render();
 
-	Vector2 playerPos;
-	Vector2 playerSize;
+	Vector2 playerOnePos;
+	Vector2 playerOneSize;
+
+	Vector2 playerTwoPos;
+	Vector2 playerTwoSize;
 
 private:
 	void initVariables();

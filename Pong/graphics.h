@@ -11,16 +11,14 @@ public:
 	~Graphics();
 
 	void render();
-	void updatePlayerScore();
-	void updateOppoScore();
+
+	int playerScore, oppoScore;
 
 private:
 	Texture2D background;
 
 	void initTextures();
 	void initVariables();
-
-	int playerScore, oppoScore;
 
 	void unload();
 };
