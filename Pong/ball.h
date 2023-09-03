@@ -19,4 +19,6 @@ private:
 	Score* score_ball_obj;
 
 	void initVariables();
+
+	void unload();
 };

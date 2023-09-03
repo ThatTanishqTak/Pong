@@ -26,3 +26,5 @@ void Ball::initVariables()
 	ballPos = { 540.0f, 360.0f };
 	ballSpeed = { 450.0f, 450.0f };
 }
+
+void Ball::unload() { delete score_ball_obj; }
