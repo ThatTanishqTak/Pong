@@ -1,19 +1,6 @@
 #include "score.h"
 
-Score::Score() 
-{ 
-	initVariables();
-
-	ball_scor_obj = new Ball();
-}
-
-Score::~Score() { unload(); }
-
-void Score::update()
-{
-	updatePlayerScore();
-	updateOpponentScore();
-}
+Score::Score() { initVariables(); }
 
 void Score::render()
 {
@@ -27,8 +14,6 @@ void Score::initVariables()
 	opponentScore = 0;
 }
 
-void Score::updatePlayerScore() { if (ball_scor_obj->ballPos.x + ball_scor_obj->radius >= 1080) { playerScore++; } }
+int Score::updatePlayerScore() { return playerScore++; }
 
-void Score::updateOpponentScore() { if (ball_scor_obj->ballPos.x - ball_scor_obj->radius <= 0) { opponentScore++; } }
-
-void Score::unload() { delete ball_scor_obj; }
+int Score::updateOpponentScore() { return opponentScore++; }

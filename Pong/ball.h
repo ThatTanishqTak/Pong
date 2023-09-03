@@ -1,6 +1,7 @@
 #pragma once
 
 #include "raylib.h"
+#include "score.h"
 
 class Ball
 {
@@ -15,5 +16,7 @@ public:
 	Vector2 ballPos;
 
 private:
+	Score* score_ball_obj;
+
 	void initVariables();
 };

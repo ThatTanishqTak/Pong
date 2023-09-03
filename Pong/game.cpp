@@ -23,7 +23,6 @@ void Game::update()
 {
 	play_obj->update();
 	ball_obj->update();
-	score_obj->update();
 }
 
 void Game::render()
