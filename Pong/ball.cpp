@@ -14,8 +14,8 @@ void Ball::update()
 
 	if (ballPos.y - radius <= 0.0f) { ballSpeed.y *= -1.0f; }
 	if (ballPos.y + radius >= 720.0f) { ballSpeed.y *= -1.0f; }
-	if (ballPos.x - radius <= 0.0f) { score_ball_obj->updateOpponentScore(); }
-	if (ballPos.x + radius >= 1080.0f) { score_ball_obj->updatePlayerScore(); }
+	if (ballPos.x - radius <= 0.0f) { ballSpeed.x *= -1.0f; }
+	if (ballPos.x + radius >= 1080.0f) { ballSpeed.x *= -1.0f; }
 }
 
 void Ball::render() { DrawCircle(static_cast<int>(ballPos.x), static_cast<int>(ballPos.y), radius, WHITE); }
