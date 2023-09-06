@@ -3,7 +3,7 @@
 #include "raylib.h"
 #include "score.h"
 
-class Ball
+class Ball: public Score
 {
 public:
 	Ball();

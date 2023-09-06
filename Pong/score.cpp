@@ -15,5 +15,4 @@ void Score::initVariables()
 }
 
 int Score::updatePlayerScore() { return playerScore++; }
-
 int Score::updateOpponentScore() { return opponentScore++; }
