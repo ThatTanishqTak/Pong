@@ -130,19 +130,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ball.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="globals.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="player.cpp" />
-    <ClCompile Include="score.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ball.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="graphics.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="score.h" />
+    <ClInclude Include="gameobject.h" />
+    <ClInclude Include="globals.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
