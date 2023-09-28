@@ -10,7 +10,6 @@ class Background : public GameObject
 {
 public:
 	Background();
-	~Background();
 
 	virtual void update();
 	virtual void render();

@@ -24,7 +24,7 @@ Rectangle opponentRect = { opponentPos.x, opponentPos.y, opponentWidth, opponent
 
 Vector2 ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };
 Vector2 ballSpeed = { -350.0f, -350.0f };
-const float radius = 20.0f;
+const float radius = 15.0f;
 
 int scorePlayer = 0;
 int scoreOpponent = 0;

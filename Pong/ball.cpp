@@ -23,9 +23,7 @@ void Ball::update()
 			CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, opponentRect))
 		{
 			ballSpeed.x *= -1;
-			if (ballSpeed.x < 0) { ballSpeed.x -= 25.0f; }
-
-			ballSpeed.x += 25.0f;
+			ballSpeed.x += (ballSpeed.x < 0) ? -25.0f : 25.0f;
 		}
 	}
 
