@@ -19,5 +19,5 @@ void Player::render()
 {
 	// Render player
 	DrawRectangle(static_cast<int>(playerRect.x), static_cast<int>(playerRect.y), 
-	static_cast<int>(playerRect.width), static_cast<int>(playerRect.height), WHITE);
+				  static_cast<int>(playerRect.width), static_cast<int>(playerRect.height), WHITE);
 }
