@@ -39,10 +39,14 @@ void Ball::update()
 		startGame = false; // Ends the game
 		
 		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f }; // Set to default ball position 
-		ballSpeed.x = 350.0f * (ballPos.x - radius <= 0.0f ? -1 : 1); // Reverse the ball direction
+		
+		// Reverse the ball direction
+		ballSpeed.x = 350.0f * (ballPos.x - radius <= 0.0f ? -1 : 1);
+		ballSpeed.y = 350.0f * (ballPos.y - radius <= 0.0f ? -1 : 1);
 
-		playerPos.y = (windowHeight - playerHeight) / 2.0f;
-		opponentPos.y = (windowHeight - opponentHeight) / 2.0f;
+		// Reset the paddle position
+		playerRect.y = (windowHeight - playerRect.height) / 2.0f;
+		opponentRect.y = (windowHeight - opponentRect.height) / 2.0f;
 	}
 }
 
