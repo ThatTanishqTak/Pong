@@ -26,9 +26,9 @@ int main()
 
 		BeginDrawing();
 		ClearBackground(BLACK);
-	
+
 		/* Render */ for (GameObject* gameObjects : gameObjects) { gameObjects->render(); }
-		
+
 		EndDrawing();
 	}
 	CloseWindow(); // De-Initialize the window

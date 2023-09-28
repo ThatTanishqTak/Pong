@@ -14,9 +14,8 @@ extern std::list<GameObject*> gameObjects; // Define the list which will contain
 extern int windowWidth;
 extern int windowHeight;
 
-// Delta time
-extern float deltaTime;
-extern float speed;
+// Game variables
+extern bool startGame;
 
 // Player variables
 extern const float playerWidth;

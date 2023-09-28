@@ -8,7 +8,7 @@ std::list<GameObject*> gameObjects;
 int windowWidth = 1080;
 int windowHeight = 720;
 
-float deltaTime = GetFrameTime();
+bool startGame = false;
 
 const float playerWidth = 10.0f;
 const float playerHeight = 100.0f;

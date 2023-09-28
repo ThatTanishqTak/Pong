@@ -6,22 +6,27 @@ Ball::Ball() { gameObjects.push_back(this); } // Adding the Ball class into the 
 
 void Ball::update()
 {
-	// Ball moment mechanic
-	ballPos.x += ballSpeed.x * GetFrameTime();
-	ballPos.y += ballSpeed.y * GetFrameTime();
+	if (IsKeyPressed(KEY_SPACE)) { startGame = true; }
 
-	// Ball bounce mechanic
-	if (ballPos.y - radius <= 0.0f) { ballSpeed.y *= -1; }
-	if (ballPos.y + radius >= windowHeight) { ballSpeed.y *= -1; }
+	if(startGame)
+	{
+		// Ball moment mechanic
+		ballPos.x += ballSpeed.x * GetFrameTime();
+		ballPos.y += ballSpeed.y * GetFrameTime();
 
-	// Ball-paddle collision mechanic
-	if (CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, playerRect) ||
-		CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, opponentRect))
-	{ 
-		ballSpeed.x *= -1;
-		if (ballSpeed.x < 0) { ballSpeed.x -= 25.0f; }
+		// Ball bounce mechanic
+		if (ballPos.y - radius <= 0.0f) { ballSpeed.y *= -1; }
+		if (ballPos.y + radius >= windowHeight) { ballSpeed.y *= -1; }
 
-		ballSpeed.x += 25.0f;
+		// Ball-paddle collision mechanic
+		if (CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, playerRect) ||
+			CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, opponentRect))
+		{
+			ballSpeed.x *= -1;
+			if (ballSpeed.x < 0) { ballSpeed.x -= 25.0f; }
+
+			ballSpeed.x += 25.0f;
+		}
 	}
 
 	// Score update mechanic
@@ -31,6 +36,7 @@ void Ball::update()
 		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };
 		ballSpeed.x *= -1;
 		ballSpeed.x = 350.0f;
+		startGame = false;
 	}
 	if (ballPos.x + radius >= windowWidth)
 	{ 
@@ -38,6 +44,7 @@ void Ball::update()
 		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };
 		ballSpeed.x *= -1;
 		ballSpeed.x = 350.0f;
+		startGame = false;
 	}
 }
 
