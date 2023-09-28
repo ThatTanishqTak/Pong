@@ -4,7 +4,7 @@ Opponent::Opponent() { gameObjects.push_back(this); }
 
 void Opponent::update()
 {
-	// This most basic AI ever
+	// The most basic AI ever (It just follows the ball)
 	if (opponentRect.y / 2.0f < ballPos.y) { opponentRect.y = ballPos.y; }
 	else if (opponentRect.y / 2.0f > ballPos.y) { opponentRect.y = ballPos.y; }
 

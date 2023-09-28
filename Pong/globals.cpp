@@ -8,6 +8,8 @@ std::list<GameObject*> gameObjects;
 int windowWidth = 1080;
 int windowHeight = 720;
 
+float deltaTime = GetFrameTime();
+
 const float playerWidth = 10.0f;
 const float playerHeight = 100.0f;
 const float playerSpeed = 700.0f;
@@ -21,7 +23,7 @@ Vector2 opponentPos = { windowWidth - 20.0f, (windowHeight - playerHeight) / 2.0
 Rectangle opponentRect = { opponentPos.x, opponentPos.y, opponentWidth, opponentHeight };
 
 Vector2 ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };
-Vector2 ballSpeed = { -250.0f, -250.0f };
+Vector2 ballSpeed = { -350.0f, -350.0f };
 const float radius = 20.0f;
 
 int scorePlayer = 0;

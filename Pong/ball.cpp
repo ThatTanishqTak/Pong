@@ -14,12 +14,14 @@ void Ball::update()
 	if (ballPos.y - radius <= 0.0f) { ballSpeed.y *= -1; }
 	if (ballPos.y + radius >= windowHeight) { ballSpeed.y *= -1; }
 
-	// The player-ball collision mechanic
+	// Ball-paddle collision mechanic
 	if (CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, playerRect) ||
 		CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, opponentRect))
-	{
+	{ 
 		ballSpeed.x *= -1;
-		ballSpeed.y *= -1;
+		if (ballSpeed.x < 0) { ballSpeed.x -= 25.0f; }
+
+		ballSpeed.x += 25.0f;
 	}
 
 	// Score update mechanic
@@ -27,11 +29,15 @@ void Ball::update()
 	{ 
 		scoreOpponent++;
 		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };
+		ballSpeed.x *= -1;
+		ballSpeed.x = 350.0f;
 	}
 	if (ballPos.x + radius >= windowWidth)
 	{ 
 		scorePlayer++;
 		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };
+		ballSpeed.x *= -1;
+		ballSpeed.x = 350.0f;
 	}
 }
 
