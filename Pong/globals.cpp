@@ -19,7 +19,7 @@ Rectangle playerRect = { playerPos.x, playerPos.y, playerWidth, playerHeight };
 const float opponentWidth = 10.0f;
 const float opponentHeight = 100.0f;
 const float opponentSpeed = 700.0f;
-Vector2 opponentPos = { windowWidth - 20.0f, (windowHeight - playerHeight) / 2.0f };
+Vector2 opponentPos = { windowWidth - 20.0f, (windowHeight - opponentHeight) / 2.0f };
 Rectangle opponentRect = { opponentPos.x, opponentPos.y, opponentWidth, opponentHeight };
 
 Vector2 ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };

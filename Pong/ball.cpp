@@ -6,7 +6,7 @@ Ball::Ball() { gameObjects.push_back(this); } // Adding the Ball class into the 
 
 void Ball::update()
 {
-	if (IsKeyPressed(KEY_SPACE)) { startGame = true; }
+	if (IsKeyPressed(KEY_SPACE)) { startGame = true; } // Start the game
 
 	if(startGame)
 	{
@@ -15,8 +15,10 @@ void Ball::update()
 		ballPos.y += ballSpeed.y * GetFrameTime();
 
 		// Ball bounce mechanic
-		if (ballPos.y - radius <= 0.0f) { ballSpeed.y *= -1; }
-		if (ballPos.y + radius >= windowHeight) { ballSpeed.y *= -1; }
+		if (ballPos.y - radius <= 0.0f || ballPos.y + radius >= windowHeight)
+		{ 
+			ballSpeed.y *= -1; 
+		}
 
 		// Ball-paddle collision mechanic
 		if (CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, playerRect) ||
@@ -27,22 +29,20 @@ void Ball::update()
 		}
 	}
 
-	// Score update mechanic
-	if (ballPos.x - radius <= 0.0f)
-	{ 
-		scoreOpponent++;
-		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };
-		ballSpeed.x *= -1;
-		ballSpeed.x = 350.0f;
-		startGame = false;
-	}
-	if (ballPos.x + radius >= windowWidth)
-	{ 
-		scorePlayer++;
-		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f };
-		ballSpeed.x *= -1;
-		ballSpeed.x = 350.0f;
-		startGame = false;
+	// Score update and game restart mechanic
+	if (ballPos.x - radius <= 0.0f || ballPos.x + radius >= windowWidth)
+	{
+		// Update the score
+		if (ballPos.x - radius <= 0.0f) { scoreOpponent++; }
+		else { scorePlayer++; }
+
+		startGame = false; // Ends the game
+		
+		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f }; // Set to default ball position 
+		ballSpeed.x = 350.0f * (ballPos.x - radius <= 0.0f ? -1 : 1); // Reverse the ball direction
+
+		playerPos.y = (windowHeight - playerHeight) / 2.0f;
+		opponentPos.y = (windowHeight - opponentHeight) / 2.0f;
 	}
 }
 

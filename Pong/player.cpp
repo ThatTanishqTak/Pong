@@ -6,13 +6,16 @@ Player::Player() { gameObjects.push_back(this); } // Adding the Player class int
 
 void Player::update()
 {
-	// Player moment mechanics
-	if (IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) { playerRect.y -= playerSpeed * GetFrameTime(); }
-	if (IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) { playerRect.y += playerSpeed * GetFrameTime(); }
+	if(startGame)
+	{
+		// Player moment mechanics
+		if (IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) { playerRect.y -= playerSpeed * GetFrameTime(); }
+		if (IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) { playerRect.y += playerSpeed * GetFrameTime(); }
 
-	// Player window collision
-	if (playerRect.y <= 0) { playerRect.y = 0; }
-	if (playerRect.y + playerRect.height >= windowHeight) { playerRect.y = windowHeight - playerRect.height; }
+		// Player window collision
+		if (playerRect.y <= 0) { playerRect.y = 0; }
+		if (playerRect.y + playerRect.height >= windowHeight) { playerRect.y = windowHeight - playerRect.height; }
+	}
 }
 
 void Player::render()
