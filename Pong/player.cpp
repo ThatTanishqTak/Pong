@@ -6,7 +6,7 @@ Player::Player() { gameObjects.push_back(this); } // Adding the Player class int
 
 void Player::update()
 {
-	if(startGame)
+	if (startGame)
 	{
 		// Player moment mechanics
 		if (IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) { playerRect.y -= playerSpeed * GetFrameTime(); }
@@ -21,6 +21,6 @@ void Player::update()
 void Player::render()
 {
 	// Render player
-	DrawRectangle(static_cast<int>(playerRect.x), static_cast<int>(playerRect.y), 
-				  static_cast<int>(playerRect.width), static_cast<int>(playerRect.height), WHITE);
+	DrawRectangle(static_cast<int>(playerRect.x), static_cast<int>(playerRect.y),
+		static_cast<int>(playerRect.width), static_cast<int>(playerRect.height), WHITE);
 }

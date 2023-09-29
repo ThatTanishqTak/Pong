@@ -16,6 +16,6 @@ void Opponent::update()
 void Opponent::render()
 {
 	// Render opponent
-	DrawRectangle(static_cast<int>(opponentRect.x), static_cast<int>(opponentRect.y), 
-	static_cast<int>(opponentRect.width), static_cast<int>(opponentRect.height), WHITE);
+	DrawRectangle(static_cast<int>(opponentRect.x), static_cast<int>(opponentRect.y),
+		static_cast<int>(opponentRect.width), static_cast<int>(opponentRect.height), WHITE);
 }
