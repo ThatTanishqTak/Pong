@@ -1,4 +1,4 @@
-// This file is the decalration of the Opponent class
+// This file is the declaration of the Opponent class
 
 #ifndef OPPONENT_H
 #define OPPONENT_H

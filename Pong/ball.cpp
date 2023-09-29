@@ -14,7 +14,7 @@ void Ball::update()
 		ballPos.x += ballSpeed.x * GetFrameTime();
 		ballPos.y += ballSpeed.y * GetFrameTime();
 
-		// Ball bounce mechanic
+		// Ball-window collision mechanic
 		if (ballPos.y - radius <= 0.0f || ballPos.y + radius >= windowHeight) { ballSpeed.y *= -1; }
 
 		// Ball-paddle collision mechanic
@@ -30,11 +30,10 @@ void Ball::update()
 	if (ballPos.x - radius <= 0.0f || ballPos.x + radius >= windowWidth)
 	{
 		// Update the score
-		if (ballPos.x - radius <= 0.0f) { scoreOpponent++; }
-		else { scorePlayer++; }
+		scoreOpponent += (ballPos.x - radius <= 0.0f) ? 1 : 0;
+		scorePlayer += (ballPos.x - radius > 0.0f) ? 1 : 0;
 
-		startGame = false; // Ends the game
-		
+		startGame = false; // Ends the game		
 		ballPos = { windowWidth / 2.0f, windowHeight / 2.0f }; // Set to default ball position 
 		
 		// Reverse the ball direction
