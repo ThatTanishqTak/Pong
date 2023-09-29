@@ -15,10 +15,7 @@ void Ball::update()
 		ballPos.y += ballSpeed.y * GetFrameTime();
 
 		// Ball bounce mechanic
-		if (ballPos.y - radius <= 0.0f || ballPos.y + radius >= windowHeight)
-		{ 
-			ballSpeed.y *= -1; 
-		}
+		if (ballPos.y - radius <= 0.0f || ballPos.y + radius >= windowHeight) { ballSpeed.y *= -1; }
 
 		// Ball-paddle collision mechanic
 		if (CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, playerRect) ||
@@ -54,6 +51,6 @@ void Ball::render()
 { 
 	DrawCircle(static_cast<int>(ballPos.x), static_cast<int>(ballPos.y), radius, WHITE); // Render the ball
 
-	DrawText(std::to_string(scorePlayer).c_str(), static_cast<int>(windowWidth / 4.0f), 0, 44, RED); // Player score
-	DrawText(std::to_string(scoreOpponent).c_str(), static_cast<int>((3.0f / 4.0f) * windowWidth), 0, 44, RED); // Opponent Score
+	DrawText(std::to_string(scorePlayer).c_str(), static_cast<int>(windowWidth / 4.0f), 0, 55, RED); // Player score
+	DrawText(std::to_string(scoreOpponent).c_str(), static_cast<int>((3.0f / 4.0f) * windowWidth), 0, 55, RED); // Opponent Score
 }

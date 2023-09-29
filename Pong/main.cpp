@@ -10,7 +10,7 @@
 
 int main()
 {
-	InitWindow(windowWidth, windowHeight, "PONG!"); // Initialize the window
+	InitWindow(windowWidth, windowHeight, "IMPOSSIBLE PONG!"); // Initialize the window
 	SetTargetFPS(60); // Lock the FPS
 
 	// Allocate memory to the objects
