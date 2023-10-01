@@ -28,6 +28,7 @@ extern Rectangle playerRect;
 extern const float opponentWidth;
 extern const float opponentHeight;
 extern const float opponentSpeed;
+extern const float range;
 extern Vector2 opponentPos;
 extern Rectangle opponentRect;
 

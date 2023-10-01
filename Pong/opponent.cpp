@@ -5,7 +5,8 @@ Opponent::Opponent() { gameObjects.push_back(this); }
 void Opponent::update()
 {
 	// The most basic AI ever (It just follows the ball)
-	if (opponentRect.y / 2.0f < ballPos.y || opponentRect.y / 2.0f > ballPos.y) { opponentRect.y = ballPos.y; }
+	if (ballPos.y < opponentRect.y - range) { opponentRect.y -= opponentSpeed * GetFrameTime(); }
+	if (ballPos.y > opponentRect.y + range) { opponentRect.y += opponentSpeed * GetFrameTime(); }
 
 	// Window collision check
 	if (opponentRect.y <= 0) { opponentRect.y = 0; }

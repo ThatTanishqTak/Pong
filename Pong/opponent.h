@@ -11,6 +11,8 @@ class Opponent : public GameObject
 public:
 	Opponent();
 
+	float range;
+
 	virtual void update();
 	virtual void render();
 };
