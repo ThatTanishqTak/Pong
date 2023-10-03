@@ -12,6 +12,7 @@ public:
 	Opponent();
 
 	float range;
+	float target;
 
 	virtual void update();
 	virtual void render();

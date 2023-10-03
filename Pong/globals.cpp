@@ -29,3 +29,5 @@ const float radius = 15.0f;
 
 int scorePlayer = 0;
 int scoreOpponent = 0;
+
+Sound sound = LoadSound("Sound/decidemp3-14575.mp3");

@@ -11,6 +11,8 @@
 int main()
 {
 	InitWindow(windowWidth, windowHeight, "IMPOSSIBLE PONG!"); // Initialize the window
+	InitAudioDevice(); // Initialize the audio
+	SetMasterVolume(60.0f); // Lock the master volume
 	SetTargetFPS(60); // Lock the FPS
 
 	// Allocate memory to the objects
@@ -22,15 +24,17 @@ int main()
 	// The main game loop
 	while (!WindowShouldClose())
 	{
-		/* Update */ for (GameObject* gameObjects : gameObjects) { gameObjects->update(); }
-
 		BeginDrawing();
 		ClearBackground(BLACK);
+
+		/* Update */ for (GameObject* gameObjects : gameObjects) { gameObjects->update(); }
 
 		/* Render */ for (GameObject* gameObjects : gameObjects) { gameObjects->render(); }
 
 		EndDrawing();
 	}
+
+	CloseAudioDevice(); // De-Initialize the audio
 	CloseWindow(); // De-Initialize the window
 
 	return 0; // Exit code

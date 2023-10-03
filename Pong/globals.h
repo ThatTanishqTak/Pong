@@ -41,4 +41,6 @@ extern const float radius;
 extern int scorePlayer;
 extern int scoreOpponent;
 
+extern Sound sound;
+
 #endif

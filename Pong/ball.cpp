@@ -2,7 +2,10 @@
 
 #include "ball.h"
 
-Ball::Ball() { gameObjects.push_back(this); } // Adding the Ball class into the game-objects list
+Ball::Ball() 
+{
+	gameObjects.push_back(this); // Adding the Ball class into the game-objects list
+}
 
 void Ball::update()
 {
@@ -29,6 +32,8 @@ void Ball::update()
 	// Score update and game restart mechanic
 	if (ballPos.x - radius <= 0.0f || ballPos.x + radius >= windowWidth)
 	{
+		PlaySound(sound);
+
 		// Update the score
 		scoreOpponent += (ballPos.x - radius <= 0.0f) ? 1 : 0;
 		scorePlayer += (ballPos.x - radius > 0.0f) ? 1 : 0;
@@ -50,6 +55,6 @@ void Ball::render()
 { 
 	DrawCircle(static_cast<int>(ballPos.x), static_cast<int>(ballPos.y), radius, WHITE); // Render the ball
 
-	DrawText(std::to_string(scorePlayer).c_str(), static_cast<int>(windowWidth / 4.0f), 0, 55, RED); // Player score
-	DrawText(std::to_string(scoreOpponent).c_str(), static_cast<int>((3.0f / 4.0f) * windowWidth), 0, 55, RED); // Opponent Score
+	DrawText(std::to_string(scorePlayer).c_str(), static_cast<int>(windowWidth / 4.0f), 10, 70, WHITE); // Player score
+	DrawText(std::to_string(scoreOpponent).c_str(), static_cast<int>((3.0f / 4.0f) * windowWidth), 10, 70, WHITE); // Opponent Score
 }

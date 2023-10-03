@@ -8,6 +8,7 @@ final: main.o globals.o background.o ball. player.o opponent.o
 	chmod +x final
 
 main.o: main.cpp
+	
 	gcc $(CFLAGS) -cpp main.cpp
 
 globals.o: globals.cpp
